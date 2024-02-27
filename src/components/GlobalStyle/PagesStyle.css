@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --font-family: "Poppins", sans-serif;
+    --second-family: "Montserrat", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+/* =========---Header---======= */
+.header{
+    width: 100%;
+    height: 10vh;
+    background: #1e2024;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    img{
+        width: 40px;
+        height: 45px;
+    }
+}
+.header_content{
+    width: 100%;
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+}
+.header_logo{
+    height: 60px;
+}
+.header_logo_title{
+    width: 100px;
+    h4{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        color: #fff;
+    }
+}
+.header_links{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    a{
+        letter-spacing: 0.3px;
+        transition: 0.3s;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 16px;
+        color: #9099a3;
+    }
+}
+.link.active{
+    color: #dde8f5;
+}
+.header_translator{
+    width: 270px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.header_translator_btn{
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    height: 35px;
+    button{
+        width: 95px;
+        height: 30px;
+        border-radius: 19px;
+        border: 1px solid #ffffff96;
+        background: #1e2024;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.6px;
+        color: #fff;
+    }
+}
+
+.header_signin_btn{
+    width:90px;
+    height: 35px;
+    box-shadow: 0 8px 20px 0 rgba(26, 92, 255, 0.2);
+    background: #1a5cff;
+    border-radius: 8px;
+    border: none;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+.lineMenuMobile{
+    display: none;
+}
