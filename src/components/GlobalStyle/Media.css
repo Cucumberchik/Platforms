@@ -8,12 +8,12 @@
     .header_content{
         justify-content: center;
         nav{
-            width: 90%;
+            width: 99%;
             display: flex;
             justify-content: space-between;
         }
     }
-    .h
+    
     .header_links{
         display: none;
     }
@@ -27,6 +27,9 @@
 
 /* ============--375px--========= */
 @media screen and (max-width: 375px) {
+    .mobile{
+        display: flex;
+    }
     .header_logo_title{
         width: 60px;
         h4{
@@ -37,13 +40,10 @@
         display: flex;
         justify-content: center;
         nav{
-            width: 80%;
+            width: 95%;
             display: flex;
         justify-content: space-between;
         }
-    }
-    .header_logo{
-
     }
     .header_links{
         display: none;
@@ -56,5 +56,70 @@
     }
     .lineMenuMobile{
         display: flex;
+    }
+    .header_navbar_mobile{
+        display: flex;
+    }
+    .header_translator_mobile{
+        transition: 0.5s;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80%;
+        overflow: hidden;
+        height: 35px;
+        button{
+            width: 95px;
+            height: 30px;
+            border-radius: 19px;
+            border: 1px solid #ffffff96;
+            background: #1e2024;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 0.6px;
+            color: #fff;
+        }
+    }
+    
+    .header_wrapper{
+        transition: 0.3s;
+        width: 375px;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: #1e2024;    
+        nav{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        ul{
+            height: 90%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        a{
+            letter-spacing: 0.3px;
+            transition: 0.3s;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            color: #9099a3;
+        }
+    }
+    .heaber_back_menu_btn{
+        display: flex;
+        justify-content: center;
+        font-size: 27px;
+        color: white;
+        border: none;
+        background: none;
+    }
+    .header_translator_btn_mobile{
+        display: flex;
+        transition: 0.3s;
     }
 }

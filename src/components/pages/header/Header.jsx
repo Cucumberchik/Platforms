@@ -6,22 +6,40 @@ import line from "../../assets/LinsMenu.svg"
 import { language } from '../../language/language';
 import { NavLink, useNavigate, } from 'react-router-dom';
 import { useState } from 'react';
+import HeaderWrapper from './HeaderWrapper';
 
 export default function Header() {
     const [activLang, setActiveLang] = useState(false)
+    const [activMobile, setActiveMobile] = useState(false)
+
 
     let navigate = useNavigate()
+    const reLangKg = () => {
+
+        localStorage.setItem("langUser", "kg")
+        window.location.reload();
+    }
+    const reLangRu = () => {
+
+        localStorage.setItem("langUser", "ru")
+        window.location.reload();
+    }
 
     const langId = handleLanguage()
-    const links = language[langId].navbar.headerNav //Слова с переводом
-    const paths = ["/curses", "/club", "/trips", "/shop"]
-    // console.log(language[langId].buttons.guest);
 
-    const reLangKg = () => localStorage.setItem("langUser", "kg")
-    const reLangRu = () => localStorage.setItem("langUser", "ru")
+    const links = language[langId].navbar.headerNav //Слова с переводом
+    const paths = ["/curses", "school", "/club", "/trips", "/shop"]
+
+
+    const screenWidth = window.innerWidth;
+
+
+
+
+    console.log(screenWidth);
     return (
         <div className='header'>
-            <div className="header_content">
+            <header className="header_content">
                 <nav>
                     <div onClick={() => navigate('/')} className="header_logo">
                         <img src={logo} alt="company_logo" />
@@ -47,11 +65,12 @@ export default function Header() {
                     <button className='header_signin_btn'>
                         {language[langId].buttons.guest}
                     </button>
-                    <div className="lineMenuMobile">
+                    {screenWidth <= 375 && <div onClick={() => setActiveMobile(true)} className="lineMenuMobile">
                         <img src={line} alt="" />
-                    </div>
+                    </div>}
                 </nav>
-            </div>
+                {screenWidth <= 375 && <HeaderWrapper reLangRu={reLangRu} reLangKg={reLangKg} links={links} paths={paths} activMobile={activMobile} setActiveMobile={setActiveMobile} />}
+            </header>
         </div>
     )
 }
