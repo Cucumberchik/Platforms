@@ -1,19 +1,6 @@
-@media screen and (max-width: 360px) {
-    .header_logo_title{
-        width: 60px;
-        h4{
-            font-size: 9px;
-        }
-    }
-    .header_content{
-        justify-content: center;
-        nav{
-            width: 99%;
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-    
+
+/* ============--375px--========= */
+@media screen and (max-width: 500px) {
     .header_links{
         display: none;
     }
@@ -23,10 +10,12 @@
     .header_signin_btn{
         display: none;
     }
-}
-
-/* ============--375px--========= */
-@media screen and (max-width: 375px) {
+    .lineMenuMobile{
+        display: flex;
+    }
+    .header_navbar_mobile{
+        display: flex;
+    }
     .mobile{
         display: flex;
     }
@@ -45,32 +34,17 @@
         justify-content: space-between;
         }
     }
-    .header_links{
-        display: none;
-    }
-    .header_translator{
-        display: none;
-    }
-    .header_signin_btn{
-        display: none;
-    }
-    .lineMenuMobile{
-        display: flex;
-    }
-    .header_navbar_mobile{
-        display: flex;
-    }
     .header_translator_mobile{
         transition: 0.5s;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        width: 80%;
+        width: 70%;
         overflow: hidden;
-        height: 35px;
+        height:55px;
         button{
-            width: 95px;
-            height: 30px;
+            width: 130px;
+            height: 40px;
             border-radius: 19px;
             border: 1px solid #ffffff96;
             background: #1e2024;
@@ -84,19 +58,20 @@
     
     .header_wrapper{
         transition: 0.3s;
-        width: 375px;
-        height: 60vh;
+        width: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         position: absolute;
         background: #1e2024;    
         nav{
+            height: 60%;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         ul{
-            height: 90%;
+            height: 100%;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
@@ -106,14 +81,14 @@
             transition: 0.3s;
             font-family: var(--font-family);
             font-weight: 500;
-            font-size: 16px;
+            font-size: 30px;
             color: #9099a3;
         }
     }
     .heaber_back_menu_btn{
         display: flex;
         justify-content: center;
-        font-size: 27px;
+        font-size:55px;
         color: white;
         border: none;
         background: none;
@@ -121,5 +96,19 @@
     .header_translator_btn_mobile{
         display: flex;
         transition: 0.3s;
+        
+    }
+    .header_signin_btn.mobile{
+        display: flex;
+        justify-content: center;
+        width: 220px;
+        height: 40px;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    .modal_window_active.OAuth{
+        h1{
+            font-size: 32px;
+        }
     }
 }

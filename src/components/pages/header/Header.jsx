@@ -7,10 +7,12 @@ import { language } from '../../language/language';
 import { NavLink, useNavigate, } from 'react-router-dom';
 import { useState } from 'react';
 import HeaderWrapper from './HeaderWrapper';
+import { ModalOAuth } from '../../modalWindows.jsx/modalOAuth';
 
 export default function Header() {
     const [activLang, setActiveLang] = useState(false)
     const [activMobile, setActiveMobile] = useState(false)
+    const [modalOAuth, setmodalOAuth] = useState(false)
 
 
     let navigate = useNavigate()
@@ -36,11 +38,10 @@ export default function Header() {
 
 
 
-    console.log(screenWidth);
     return (
         <div className='header'>
             <header className="header_content">
-                <nav>
+                {!modalOAuth && <nav>
                     <div onClick={() => navigate('/')} className="header_logo">
                         <img src={logo} alt="company_logo" />
                         <div className="header_logo_title">
@@ -62,14 +63,15 @@ export default function Header() {
                         </div>
                         <img onClick={() => setActiveLang(!activLang)} src={translatorLogo} alt="translator_logo" />
                     </div>
-                    <button className='header_signin_btn'>
-                        {language[langId].buttons.guest}
+                    <button onClick={() => setmodalOAuth(true)} className='header_signin_btn buttons'>
+                        {language[langId].buttons.guest[0]}
                     </button>
-                    {screenWidth <= 375 && <div onClick={() => setActiveMobile(true)} className="lineMenuMobile">
+                    {screenWidth <= 500 && <div onClick={() => setActiveMobile(true)} className="lineMenuMobile">
                         <img src={line} alt="" />
                     </div>}
-                </nav>
-                {screenWidth <= 375 && <HeaderWrapper reLangRu={reLangRu} reLangKg={reLangKg} links={links} paths={paths} activMobile={activMobile} setActiveMobile={setActiveMobile} />}
+                </nav>}
+                {modalOAuth && <ModalOAuth setmodalOAuth={setmodalOAuth} />}
+                {screenWidth <= 500 && <HeaderWrapper reLangRu={reLangRu} reLangKg={reLangKg} links={links} paths={paths} activMobile={activMobile} setmodalOAuth={setmodalOAuth} setActiveMobile={setActiveMobile} />}
             </header>
         </div>
     )
